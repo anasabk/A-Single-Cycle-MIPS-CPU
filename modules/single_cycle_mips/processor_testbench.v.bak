@@ -1,0 +1,9 @@
+module processor_test();
+
+reg clock;
+
+always begin
+	#1
+end
+
+endmodule

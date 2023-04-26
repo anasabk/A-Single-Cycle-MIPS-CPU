@@ -1,0 +1,61 @@
+module mult32 (
+	input clock, reset,
+	input [1:0] op,
+	input [31:0] a, b, 
+	output [63:0] out
+);
+	
+	wire wr_result, 
+		  wr_shift_reg, 
+		  wr_counter, 
+		  sl_shift, 
+		  rt_shift_reg, 
+		  rt_counter,
+		  rt_multiplicand, 
+		  ls_bit;
+
+	wire [5:0] counter;
+	wire [31:0] toAdder, added, multiplicandCurrent, addA, addB;
+	wire [63:0] result;
+	wire [31:0] tempOut [1:0];	
+	
+	assign out = {tempOut[1], tempOut[0]};
+	
+	mux32_2_1 add_param_mux1(a, toAdder, op[1], addA);
+	mux32_2_1 add_param_mux2(b, multiplicandCurrent, op[1], addB);
+	mux32_2_1 least32_out_mux(added, result[31:0], op[1], tempOut[0]);
+	mux32_2_1 most32_out_mux(0, result[63:32], op[1], tempOut[1]);
+	
+	adder add1(addA, addB, op[0] & ~op[1], added);
+		
+	datapath d1(
+		.multiplicand(a), 
+		.multiplier(b), 
+		.added(added), 
+		.wr_shift_reg(wr_shift_reg), 
+		.wr_counter(wr_counter), 
+		.sl_shift(sl_shift), 
+		.rt_shift_reg(rt_shift_reg), 
+		.rt_counter(rt_counter),
+		.rt_multiplicand(rt_multiplicand),
+		.clock(clock),
+		.toAdder(toAdder), 
+		.multiplicandOut(multiplicandCurrent),
+		.counterOut(counter), 
+		.ls_bit(ls_bit),
+		.result(result)
+	);
+
+	control c1(
+		.counter(counter), 
+		.ls_bit(ls_bit), 
+		.multOp(op[1]), 
+		.reset(reset),
+		.wr_shift_reg(wr_shift_reg), 
+		.wr_counter(wr_counter), 
+		.sl_shift(sl_shift), 
+		.rt_shift_reg(rt_shift_reg), 
+		.rt_counter(rt_counter),
+		.rt_multiplicand(rt_multiplicand)
+	);
+endmodule

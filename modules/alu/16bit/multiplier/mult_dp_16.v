@@ -1,0 +1,38 @@
+module mult_dp_16(
+	input [15:0] multiplicand, multiplier, added,
+	input wr_shift_reg, 
+		   wr_counter, 
+		   sl_shift, 
+		   rt_shift_reg, 
+		   rt_counter,
+		   rt_multiplicand,
+			clock,
+	output [15:0] toAdder, multiplicandOut,
+	output [4:0] counterOut, 
+	output ls_bit,
+	output [31:0] result
+);
+
+	reg [4:0] counter;
+	reg [15:0] multiplicandReg;
+	reg [31:0] shiftReg = 32'b0;
+	
+	assign counterOut = counter;
+	assign ls_bit = shiftReg[0];
+	assign multiplicandOut = multiplicandReg;
+	assign toAdder = shiftReg[31:16];
+	assign result = shiftReg;
+	
+	always @ (posedge clock) begin
+		if(sl_shift) begin
+			if(wr_shift_reg) shiftReg <= {1'b0, added, shiftReg[15:1]};
+			else shiftReg <= {1'b0, shiftReg[31:1]};
+		end
+		
+		else if(rt_shift_reg) shiftReg <= {16'b0, multiplier};
+		if(rt_multiplicand) multiplicandReg <= multiplicand;
+		if(wr_counter) counter <= counter + 5'd1;
+		if(rt_counter) counter <= 5'd0;
+	end
+
+endmodule

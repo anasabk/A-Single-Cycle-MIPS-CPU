@@ -1,0 +1,4 @@
+module mips16_sc(
+	input clock,
+	output [15:0] alu_out
+);

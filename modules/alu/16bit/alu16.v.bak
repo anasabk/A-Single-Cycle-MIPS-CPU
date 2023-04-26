@@ -1,0 +1,37 @@
+module alu16(
+	input [31:0] a, b,
+	input [2:0] aluOp,
+	input clk, reset,
+	output [31:0] result);
+	
+	wire [31:0] andR, orR, xorR, sltR, norR, updated_b;
+	wire [63:0] multR;
+	wire [1:0] mult_unit_op;
+	wire subOp;
+	
+	assign mult_unit_op = {aluOp[2] ^ aluOp[1], aluOp[2] ^ aluOp[0]};
+	assign subOp = ~mult_unit_op[1] & mult_unit_op[0];
+
+	and32 and_32(andR, a, b);
+	or32 or_32(orR, a, b);
+	xor32 xor_32(xorR, a, b);
+	nor32 nor_32(norR, a, b);
+	
+	mux32_2_1 neg_sign(b, ~b, subOp, updated_b);
+	
+	mux32_8_1 muxOut(
+			multR[31:0],
+			multR[31:0],
+			multR[31:0],
+			xorR,
+			andR,
+			orR,
+			sltR,
+			norR,
+			aluOp,
+			result);
+	
+	assign sltR = multR[31];
+	
+	mult32 multUnit(clk, reset, mult_unit_op, a, updated_b, multR);
+endmodule

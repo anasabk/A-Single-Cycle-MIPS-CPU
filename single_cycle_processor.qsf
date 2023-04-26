@@ -1,0 +1,177 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 13:26:18  January 11, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		single_cycle_processor_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEBA4F23C7
+set_global_assignment -name TOP_LEVEL_ENTITY mips16_sc
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:26:18  JANUARY 11, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH beq_test -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME processor_testbench -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id processor_testbench
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME processor_testbench -section_id processor_testbench
+set_global_assignment -name AUTO_RAM_RECOGNITION ON
+set_global_assignment -name EDA_TEST_BENCH_NAME li_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id li_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME li_test -section_id li_test
+set_global_assignment -name EDA_TEST_BENCH_NAME add_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id add_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME add_test -section_id add_test
+set_global_assignment -name EDA_TEST_BENCH_NAME and_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id and_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME and_test -section_id and_test
+set_global_assignment -name EDA_TEST_BENCH_NAME beq_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id beq_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME beq_test -section_id beq_test
+set_global_assignment -name EDA_TEST_BENCH_NAME bne_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id bne_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME bne_test -section_id bne_test
+set_global_assignment -name EDA_TEST_BENCH_NAME j_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id j_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME j_test -section_id j_test
+set_global_assignment -name EDA_TEST_BENCH_NAME jal_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id jal_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME jal_test -section_id jal_test
+set_global_assignment -name EDA_TEST_BENCH_NAME jr_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id jr_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME jr_test -section_id jr_test
+set_global_assignment -name EDA_TEST_BENCH_NAME lw_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id lw_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME lw_test -section_id lw_test
+set_global_assignment -name EDA_TEST_BENCH_NAME mult_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id mult_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME mult_test -section_id mult_test
+set_global_assignment -name EDA_TEST_BENCH_NAME or_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id or_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME or_test -section_id or_test
+set_global_assignment -name EDA_TEST_BENCH_NAME shift_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id shift_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME shift_test -section_id shift_test
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_NAME slt_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id slt_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME slt_test -section_id slt_test
+set_global_assignment -name EDA_TEST_BENCH_NAME sub_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sub_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sub_test -section_id sub_test
+set_global_assignment -name EDA_TEST_BENCH_NAME sw_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sw_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sw_test -section_id sw_test
+set_global_assignment -name EDA_TEST_BENCH_NAME stb_1 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id stb_1
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME stb_1 -section_id stb_1
+set_global_assignment -name EDA_TEST_BENCH_NAME stb_2 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id stb_2
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME stb_2 -section_id stb_2
+set_global_assignment -name VERILOG_FILE modules/alu/16bit/alu16_tb.v
+set_global_assignment -name VERILOG_FILE modules/single_cycle_mips/processor_testbench.v
+set_global_assignment -name VERILOG_FILE modules/single_cycle_mips/mips16_sc.v
+set_global_assignment -name QIP_FILE modules/registers/data_memory/data_mem.qip
+set_global_assignment -name VERILOG_FILE modules/mux/mux32_8_1.v
+set_global_assignment -name VERILOG_FILE modules/mux/mux32_2_1.v
+set_global_assignment -name VERILOG_FILE modules/mux/mux8_1.v
+set_global_assignment -name VERILOG_FILE modules/mux/mux2_1.v
+set_global_assignment -name VERILOG_FILE modules/gates/xor32.v
+set_global_assignment -name VERILOG_FILE modules/gates/or32.v
+set_global_assignment -name VERILOG_FILE modules/gates/nor32.v
+set_global_assignment -name VERILOG_FILE modules/gates/and32.v
+set_global_assignment -name VERILOG_FILE modules/adders/cll4.v
+set_global_assignment -name VERILOG_FILE modules/adders/cla4.v
+set_global_assignment -name VERILOG_FILE modules/adders/adder.v
+set_global_assignment -name VERILOG_FILE modules/single_cycle_mips/control.v
+set_global_assignment -name VERILOG_FILE modules/single_cycle_mips/datapath.v
+set_global_assignment -name VERILOG_FILE modules/alu/shifter/shifter16.v
+set_global_assignment -name VERILOG_FILE modules/alu/16bit/alu16.v
+set_global_assignment -name VERILOG_FILE modules/alu/16bit/multiplier/mult16.v
+set_global_assignment -name VERILOG_FILE modules/alu/16bit/multiplier/mult_dp_16.v
+set_global_assignment -name VERILOG_FILE modules/alu/16bit/multiplier/mult_c_16.v
+set_global_assignment -name VERILOG_FILE modules/registers/register_file/data_reg.v
+set_global_assignment -name VERILOG_FILE modules/registers/instruction_memory/rom_1024_32.v
+set_global_assignment -name VERILOG_FILE test_benches/li/li_test.v
+set_global_assignment -name VERILOG_FILE test_benches/add/add_test.v
+set_global_assignment -name VERILOG_FILE test_benches/and/and_test.v
+set_global_assignment -name VERILOG_FILE test_benches/beq/beq_test.v
+set_global_assignment -name VERILOG_FILE test_benches/bne/bne_test.v
+set_global_assignment -name VERILOG_FILE test_benches/j/j_test.v
+set_global_assignment -name VERILOG_FILE test_benches/jal/jal_test.v
+set_global_assignment -name VERILOG_FILE test_benches/jr/jr_test.v
+set_global_assignment -name VERILOG_FILE test_benches/lw/lw_test.v
+set_global_assignment -name VERILOG_FILE test_benches/mult/mult_test.v
+set_global_assignment -name VERILOG_FILE test_benches/or/or_test.v
+set_global_assignment -name VERILOG_FILE test_benches/shift/shift_test.v
+set_global_assignment -name VERILOG_FILE modules/alu/32bit/alu32_tb.v
+set_global_assignment -name VERILOG_FILE test_benches/slt/slt_test.v
+set_global_assignment -name VERILOG_FILE test_benches/sub/sub_test.v
+set_global_assignment -name VERILOG_FILE test_benches/sw/sw_test.v
+set_global_assignment -name VERILOG_FILE test_benches/special/stb_1/stb_1.v
+set_global_assignment -name VERILOG_FILE test_benches/special/stb_2/stb_2.v
+set_global_assignment -name EDA_TEST_BENCH_NAME alu16_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id alu16_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME alu16_tb -section_id alu16_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/single_cycle_mips/processor_testbench.v -section_id processor_testbench
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/li/li_test.v -section_id li_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/add/add_test.v -section_id add_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/and/and_test.v -section_id and_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/beq/beq_test.v -section_id beq_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/bne/bne_test.v -section_id bne_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/j/j_test.v -section_id j_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/jal/jal_test.v -section_id jal_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/jr/jr_test.v -section_id jr_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/lw/lw_test.v -section_id lw_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/mult/mult_test.v -section_id mult_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/or/or_test.v -section_id or_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/shift/shift_test.v -section_id shift_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/slt/slt_test.v -section_id slt_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/sub/sub_test.v -section_id sub_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/sw/sw_test.v -section_id sw_test
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/special/stb_1/stb_1.v -section_id stb_1
+set_global_assignment -name EDA_TEST_BENCH_FILE test_benches/special/stb_2/stb_2.v -section_id stb_2
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/alu/16bit/alu16_tb.v -section_id alu16_tb
